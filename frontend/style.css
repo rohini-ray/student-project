@@ -1,0 +1,107 @@
+/* Background gradient (yellow → red blend) */
+body {
+    margin: 0;
+    height: 100vh;
+
+    /* Smooth blended gradient */
+    background: linear-gradient(135deg, hsl(54, 100%, 62%),#f71000);
+
+    font-family: 'Segoe UI', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass container */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    padding: 40px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+
+    text-align: center;
+    width: 320px;
+}
+
+/* Title */
+h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+    display: block;
+    width: 100%;
+    margin: 1px 0;
+    padding: 12px;
+
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+
+    border: none;
+    border-radius: 10px;
+
+    background: black;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Button hover animation */
+button:hover {
+    background: #222;
+    transform: scale(1.05);
+}
+
+/* Result */
+#result {
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* Form group (label + input alignment) */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 10px 0;
+}
+
+/* Labels on left */
+label {
+    color: rgb(46, 43, 43);
+    font-size: 14px;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Inputs on right */
+input {
+    width: 50%;
+    padding: 10px;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}

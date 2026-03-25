@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎯 Student Marks Predictor</h1>
+
+<div class="form-group">
+    <label>Study Hours</label>
+    <input id="study" type="number">
+</div>
+
+<div class="form-group">
+    <label>Attendance (%)</label>
+    <input id="attendance" type="number">
+</div>
+
+<div class="form-group">
+    <label>Previous Marks</label>
+    <input id="previous" type="number">
+</div>
+
+<div class="form-group">
+    <label>Sleep Hours</label>
+    <input id="sleep" type="number">
+</div>
+
+<button onclick="predict()">Predict</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
