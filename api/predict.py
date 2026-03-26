@@ -1,20 +1,18 @@
 import json
-import pickle
-import numpy as np
-
-model = pickle.load(open("model.pkl", "rb"))
 
 def handler(request):
     try:
         data = request.json()
-        hours = float(data["hours"])
-        
-        prediction = model.predict([[hours]])
+        marks = float(data.get("marks", 0))
+
+        # Your logic here
+        result = marks * 2
 
         return {
             "statusCode": 200,
-            "body": json.dumps({"prediction": float(prediction[0])})
+            "body": json.dumps({"prediction": result})
         }
+
     except Exception as e:
         return {
             "statusCode": 500,
