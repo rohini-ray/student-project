@@ -1,28 +1,24 @@
-async function predict() {
-
-    const data = {
-        study_hours: document.getElementById("study").value,
-        attendance: document.getElementById("attendance").value,
-        previous_marks: document.getElementById("previous").value,
-        sleep_hours: document.getElementById("sleep").value
-    };
+async function predictMarks() {
+    const hours = document.getElementById("hours").value;
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/predict", {
+        const response = await fetch("/api/predict", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({ hours: hours })
         });
 
-        const result = await response.json();
+        const data = await response.json();
 
         document.getElementById("result").innerText =
-            "Predicted Marks: " + result.predicted_marks;
+            "Predicted Marks: " + data.prediction;
 
     } catch (error) {
+        console.error("Error:", error);
         document.getElementById("result").innerText =
-            "❌ Error connecting to backend";
+            "❌ Error connecting backend";
     }
 }
+
