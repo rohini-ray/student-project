@@ -31,34 +31,13 @@
     <input id="sleep" type="number">
 </div>
 
-<input type="number" id="marks" placeholder="Enter marks">
-<button onclick="predictMarks()">Predict</button>
+<button onclick="predict()">Predict Marks</button>
 
 <p id="result"></p>
 
 </div>
 
-<script>
-function predictMarks() {
-    let marks = document.getElementById("marks").value;
-
-    fetch("https://your-backend.vercel.app/predict", {  // ✅ HERE
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            marks: marks
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById("result").innerText =
-            data.prediction;
-    })
-    .catch(err => console.log(err));
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

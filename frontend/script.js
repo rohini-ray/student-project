@@ -9,18 +9,12 @@ async function predict() {
 
     try {
         const response = await fetch("/api/predict", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        marks: inputValue
-    })
-})
-.then(res => res.json())
-.then(data => {
-    console.log(data);
-});
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
         const result = await response.json();
 
